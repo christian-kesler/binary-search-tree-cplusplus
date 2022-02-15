@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="VectorSorting.cpp" />
+    <ClCompile Include="BinarySearchTree.cpp" />
     <ClCompile Include="CSVparser.cpp" />
   </ItemGroup>
   <ItemGroup>
