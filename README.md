@@ -90,7 +90,7 @@ Enhanced Revision created during the CS-499 course at Southern New Hampshire Uni
 </ul>
 </li>
 <li>
-<a target='blank' href='https://github.com/christian-kesler/binary-search-tree-cplusplus/releases/tag/v1.2.0'>v1.2.0</a>
+<a target='blank' href='https://github.com/christian-kesler/binary-search-tree-cplusplus/releases/tag/v1.2.1'>v1.2.1</a>
 <ul>
 <li>
 ePortfolio Release containing my final enhancements for use within the CS-499 Computer Science Capstone course
