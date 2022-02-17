@@ -23,7 +23,8 @@ using namespace std;
 // Forward method declarations
 double strToDouble(string str, char ch);
 
-// Structure to hold bid information
+
+// Bid struct to hold bid information
 struct Bid {
     string bidId;   // unique identifier for the entry
     string title;   
@@ -34,7 +35,8 @@ struct Bid {
     }
 };
 
-// Tree node, which contains a single entry along with a pointer to two other nodes
+
+// Node struct, which contains a single entry along with a pointer to two other nodes
 struct Node {
     Bid bid;
     Node* left;
@@ -53,12 +55,7 @@ struct Node {
 };
 
 
-
-//============================================================================
 // Binary Search Tree class definition
-//============================================================================
-
-// The Binary Search Tree class
 class BinarySearchTree {
 
 private:
@@ -377,93 +374,97 @@ int main(int argc, char* argv[]) {
     int choice = 0;
     while (choice != 9) {
         cout << "Menu:" << endl;
-        cout << "  1. Load Bids" << endl;
-        cout << "  2. Display All Bids" << endl;
-        cout << "  3. Find Bid" << endl;
-        cout << "  4. Remove Bid" << endl;
-        cout << "  5. Delete All Bids" << endl;
-        cout << "  9. Exit" << endl;
-        cout << "Enter choice: ";
+        cout << "  1. Load Sample Bids from CSV file into Binary Search Tree" << endl;
+        cout << "  2. Print All Bids in Binary Search Tree in ascending order" << endl;
+        cout << "  3. Find and Print Bid with ID: 98109 within Binary Search Tree" << endl;
+        cout << "  4. Remove Bid with ID: 98109 from Binary Search Tree" << endl;
+        cout << "  5. Delete Binary Search Tree and All Bids within it" << endl;
+        cout << "  9. Exit Program" << endl;
+        cout << "Enter menu selection as a single integer followed by the Enter key: ";
         cin >> choice;
 
-        switch (choice) {
+        if (choice > 0 && choice < 10) {
+            switch (choice) {
 
-        case 1:
-            // Initialize a timer variable before performing computations
-            ticks = clock();
 
-            // Create a new BST and load data from the designated file
-            bst = new BinarySearchTree();
-            loadBids(csvPath, bst);
+            case 1:
+                // Initialize a timer variable before performing computations
+                ticks = clock();
 
-            // Calculate elapsed time and display result
-            ticks = clock() - ticks; // current clock ticks minus starting clock ticks
-            cout << "TIME: " << ticks * 1.0 / CLOCKS_PER_SEC << " seconds OR " << ticks << " clock ticks " << endl;
+                // Create a new BST and load data from the designated file
+                bst = new BinarySearchTree();
+                loadBids(csvPath, bst);
 
-            break;
+                // Calculate elapsed time and display result
+                ticks = clock() - ticks; // current clock ticks minus starting clock ticks
+                cout << "TIME: " << ticks * 1.0 / CLOCKS_PER_SEC << " seconds OR " << ticks << " clock ticks " << endl;
 
-        case 2:
-            // Initialize a timer variable before performing computations
-            ticks = clock();
+                break;
 
-            // Print the BST in order from the root
-            bst->PrintInOrderFromRoot();
-            
-            // Calculate elapsed time and display result
-            ticks = clock() - ticks; // current clock ticks minus starting clock ticks
-            cout << "TIME: " << ticks * 1.0 / CLOCKS_PER_SEC << " seconds OR " << ticks << " clock ticks " << endl;
+            case 2:
+                // Initialize a timer variable before performing computations
+                ticks = clock();
 
-            break;
+                // Print the BST in order from the root
+                bst->PrintInOrderFromRoot();
 
-        case 3:
-            // Initialize a timer variable before performing computations
-            ticks = clock();
+                // Calculate elapsed time and display result
+                ticks = clock() - ticks; // current clock ticks minus starting clock ticks
+                cout << "TIME: " << ticks * 1.0 / CLOCKS_PER_SEC << " seconds OR " << ticks << " clock ticks " << endl;
 
-            // Search BST based on designated key and print based on findings
-            bid = bst->Search(bidKey);
-            if (!bid.bidId.empty()) {
-                displayBid(bid);
+                break;
+
+            case 3:
+                // Initialize a timer variable before performing computations
+                ticks = clock();
+
+                // Search BST based on designated key and print based on findings
+                bid = bst->Search(bidKey);
+                if (!bid.bidId.empty()) {
+                    displayBid(bid);
+                }
+                else {
+                    cout << "Bid Id " << bidKey << " not found." << endl;
+                }
+
+                // Calculate elapsed time and display result
+                ticks = clock() - ticks; // current clock ticks minus starting clock ticks
+                cout << "TIME: " << ticks * 1.0 / CLOCKS_PER_SEC << " seconds OR " << ticks << " clock ticks " << endl;
+
+                break;
+
+            case 4:
+                // Initialize a timer variable before performing computations
+                ticks = clock();
+
+                // Search the BST for a bid based on designated key and remove it
+                bst->Remove(bidKey);
+
+                // Calculate elapsed time and display result
+                ticks = clock() - ticks; // current clock ticks minus starting clock ticks
+                cout << "TIME: " << ticks * 1.0 / CLOCKS_PER_SEC << " seconds OR " << ticks << " clock ticks " << endl;
+
+                break;
+
+            case 5:
+                // Initialize a timer variable before performing computations
+                ticks = clock();
+
+                // Call the destructor and create a new empty BST 
+                bst->~BinarySearchTree();
+                bst = new BinarySearchTree();
+
+                // Calculate elapsed time and display result
+                ticks = clock() - ticks; // current clock ticks minus starting clock ticks
+                cout << "TIME: " << ticks * 1.0 / CLOCKS_PER_SEC << " seconds OR " << ticks << " clock ticks " << endl;
+
+                break;
             }
-            else {
-                cout << "Bid Id " << bidKey << " not found." << endl;
-            }
-
-            // Calculate elapsed time and display result
-            ticks = clock() - ticks; // current clock ticks minus starting clock ticks
-            cout << "TIME: " << ticks * 1.0 / CLOCKS_PER_SEC << " seconds OR " << ticks << " clock ticks " << endl;
-
-            break;
-
-        case 4:
-            // Initialize a timer variable before performing computations
-            ticks = clock();
-
-            // Search the BST for a bid based on designated key and remove it
-            bst->Remove(bidKey);
-
-            // Calculate elapsed time and display result
-            ticks = clock() - ticks; // current clock ticks minus starting clock ticks
-            cout << "TIME: " << ticks * 1.0 / CLOCKS_PER_SEC << " seconds OR " << ticks << " clock ticks " << endl;
-
-            break;
-
-        case 5:
-            // Initialize a timer variable before performing computations
-            ticks = clock();
-
-            // Call the destructor and create a new empty BST 
-            bst->~BinarySearchTree();
-            bst = new BinarySearchTree();
-
-            // Calculate elapsed time and display result
-            ticks = clock() - ticks; // current clock ticks minus starting clock ticks
-            cout << "TIME: " << ticks * 1.0 / CLOCKS_PER_SEC << " seconds OR " << ticks << " clock ticks " << endl;
-
-            break;
         }
+        int choice = 0;
     }
 
-    cout << "Good bye!     ( ^_^)/" << endl;
+    cout << "*/n*Good bye!     ( ^_^)/" << endl;
 
     return 0;
 }
