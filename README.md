@@ -1,31 +1,25 @@
 <html>
-<h2><a target='blank' href="https://github.com/christian-kesler/junit-testing-java">Contact Service on GitHub</a></h2>
+<h2><a target='blank' href="https://github.com/christian-kesler/binary-search-tree-cplusplus">Binary Search Tree on GitHub</a></h2>
 <hr>
 <p>
-The artifact I have chosen to showcase my Software Engineering and Design capabilities is the Contact Service Java application, which involves a group of Java classes and comprehensive Junit test cases that ensure class attributes abide by the specifications.  This artifact serves to showcase my competency with the Java programming language, the Eclipse IDE, object oriented programming, automated testing technical principles, and observation of programming best practices such as naming conventions and comment etiquette.  Considering that Java, Eclipse, and JUnit are widely used in software development, I find this artifact to be extremely worthy of inclusion in my portfolio.  
+The artifact I have chosen to showcase my Algorithms and Data Structure capabilities is the Binary Search Tree C++ program, which involves a series of algorithms that import data from a CSV file and store the entries in a binary search tree data structure.  This artifact serves to showcase my competency with the C++ programming language, the Microsoft Visual Studio IDE, object oriented programming, data structure and algorithm principles, and observation of programming best practices such as naming conventions and comment etiquette.  Considering that C++ is a challenging language with relatively unique syntax and technical complexity used in a variety of mathemtically demanding programs, and that data structures and algorithms are used in staggeringly large number of applications, I would say with confidence that this project is worthy of inclusion in my portfolio.  
 </p>
 
 <h3>Description</h3>
 <p>
-This is a series of Java classes with various attributes that were designed around the specifications of the client.  There are three types of classes, each with constructors, getters, and setters as appropriate.  Each class type also has a corresponding Service class, which is designed to handle instances of the base class in a list format with a scaling ID number.  The classes communicate with each other in a variety of complex ways, and I incorporated JUnit tests that comprehensively ensure all interactions are handled properly.  Each of the six classes have a corresponding Junit test file, which have been run as coverage tests throughout development to ensure comprehensive testing is present.  The JUnit testing is thorough, offering multiple types of input and verifying expected behavior, both in nominal and exceptional cases.  The JUnit tests have been verified to cover all relevant lines of code with nearly 100% coverage project wide.  
+This project was created during my Bachelor's of Science (Computer Science) degree program at Southern New Hampshire University.  There are two main files involved, one of which is a CSV Parser that allows us to easily pull data from a CSV file (I did not develop this program, it was provided by my university), and the other is an algorithm that utilizes the CSV Parser to import the data into a binary search tree data structure.  The program includes a command prompt line that executes different functions based on user input, which include importing all the data in a sample CSV file, printing all the entries loaded in the data structure, searching the data structure for a specific entry based on a preset identifier, deleting a specific entry based on a preset identifier, deleting all the entries in the data structure, and exiting the program.  This program was developed by me throughout a course titled "Data Structures and Algorithms", which was a notably memorable course of mine.  I've given a fair bit of thought to the concept of binary search trees, their relationship to linked lists, and how to mathematically calculate their performance.            
 </p>
 
 <h4>Enhancement Progress</h4>
-
 <p>
-I have added a variety of consistent and descriptive comments throughout the Contact Service java classes and JUnit tests.  I also replaced many (if not all) of the hard coded strings and integers used in comparisons with descriptive variables that can be changed from one accessible location near the top of each file.  I found repeating error statements for incorrect input both in the constructor and setters quite troublesome.  While the client did not request such functionality, I chose to streamline this by creating a series of verifier methods that are passed input, check the validity of the input for a specific object attribute, and return true or false along with an error statement if applicable.  This allowed me to greatly simplify the constructor and setters by using this method as the condition within an if statement, assigning the value to the object if true.  
+As with my other artifacts, the first element of this project that I tended to was the comment etiquette.  The comments were vague, inconsistent, and sometimes entirely absent throughout this program.  I began by adding descriptions for each of the methods, including input clarification and recursive designation.  In the main method, I included comments that describe the nature of the clock computations so that the exact functionality of each case might be easier to discern.  
 <br><br>
-
-I did hope to create a loop that would run all the JUnit tests rather than listing them out individually, but that proved to be less efficient or practical than the current layout.  I was successful in condensing the class functions using the input verifier methods, and in improving the readability of all files with improved commenting strategies.  I am quite pleased with the progress that has been made thus far, but will likely continue to make small improvements should I have leftover time in later modules.  
+After improving the comments throughout, I turned to expanding or improving on the functionality of the program.  I began by including the clock statements across all cases, and improving the readability of said satatements.  I then created a destructor for the binary search tree, which is a recursive function that deletes every node in the tree before creating a new empty tree to avoid reading errors.  The destructor serves only to pass the root to the method that destroys the entire tree.  While I could have simply made a function that destroys the tree from the root and called that, I wanted to leave my methods open ended so that I might use them to delete portions of the tree later on should I need to do so.  
 </p>
 
 <h4>Enhancement Reflection</h4>
-
-<p>           
-While enhancing this artifact for my ePortfolio, I realized that there was a surprising amount of variation regarding the format of the JUnit tests.  The service class tests had up to ten filler entries to test the constructor and manipulate in later tests, which was more than necessary.  Meanwhile, the regular class tests operated a single instance of the constructor each time, only handling a single object at a time.  This shouldn't be surprising given the nature of the service classes, which are meant to hold the appointment, task, and contact objects in lists.  It does make me wonder if a redesign for the service tests might be in order, so that the general pacing of the JUnit tests are similar across all files.  
-<br><br>
-
-I also noticed that some of the things I wanted to improve were already near their ideal state.  The class constructors, for example, had a series of if else branches that checked each input value for validity before creating the object and assigning the attributes.  I thought that was inefficient at a glance, hoping to streamline the input screening process.  While I was able to do so from a readability perspective, the actual program performance was not nearly as suboptimal as I thought.  The input must be checked for validity before being using to instantiate an object, else erroneous entries would not be handled.  Realizing this, I instead focused on improving readability and code compactness while minimizing repeated statements, which proved quite rewarding.  
+<p>
+While enhancing this artifact, I realized that the binary search tree is remarkably simple to manipulate and interact with once the recursive functions are handled.  The most complex thing that I might try to do besides creating a more dynamic menu interface would be a function that rebalances the tree.  This would not be an insurmountable task, but I intend to only focus on something so difficult to develop and test after all my artifacts are in an acceptable state.  The other thing that I noticed while enhancing this artifact involved the file that the default data is loaded from.  I began to wonder how I might be able to load from a specific file through the menu after program execution, and doubt it would be remarkably complicated.  The ability to pass in a file path upon command line execution of the program serves that purpose for now, but I do have ideas regarding future enhancements.  
 </p>
 
 <h3>Getting Started</h3>
@@ -35,10 +29,7 @@ I also noticed that some of the things I wanted to improve were already near the
 Windows 10* || <a target='blank' href='https://www.microsoft.com/en-us/software-download/windows10'>Link to Download Windows</a>
 </li>
 <li>
-Eclipse IDE for Java Developers 2021-12 || <a target='blank' href='https://www.eclipse.org/downloads/packages/release/2021-03/r/eclipse-ide-java-developers'>Link to Download Eclipse</a>
-</li>
-<li>
-JUnit 4 Library || <a target='blank' href='https://qualitestgroup.com/insights/technical-hub/how-to-set-up-junit-in-eclipse/'>Setup Guide</a>
+Visual Studio 2019 || <a target='blank' href='https://visualstudio.microsoft.com/downloads/'>Link to Download Visual Studio</a>
 </li>
 </ul>
 <p><i>*potentially not required, but it is what I used and therefore know for certain that it works</i></p>
@@ -46,7 +37,7 @@ JUnit 4 Library || <a target='blank' href='https://qualitestgroup.com/insights/t
 <h4>Installing</h4>
 <ul>
 <li>
-Download the Project Files from the SNHU_CS-320_JUnit-Testing Repository on GitHub || <a target='blank' href='https://github.com/christian-kesler/junit-testing-java'>Link to Repository</a>
+Download the Project Files from the Project Repository on GitHub || <a target='blank' href='https://github.com/christian-kesler/binary-search-tree-cplusplus'>Link to Repository</a>
 </li>
 <li>
 Cloning the Repository via Git is ideal, but downloading a zip and extracting it will also work || <a target='blank' href='https://git-scm.com/downloads'>Link to Download Git</a>
@@ -55,45 +46,54 @@ Cloning the Repository via Git is ideal, but downloading a zip and extracting it
 
 <h4>Executing Program</h4>
 <ul>
-<li>You can create a new Java project in Eclipse using existing project files, create an empty project and move the project files into the new directory, manually, or create an empty project and clone directly to that folder using Git</li>
-<li>Compile and Build the project; there should be no errors</li>
-<li>Right click on the Test folder under src > contact > services and select "Run as Coverage Tests"</li>
-<li>The Coverage tab will highlight the lines of code that were executed in green, while the lines that were not executed will be highlighted in red</li>
+<li>You can create a new project in Visual Studio using existing project files, create an empty project and move the project files into the new directory, manually, or create an empty project and clone directly to that folder using Git</li>
+<li>Navigate to and open the BinarySearchTree.cpp file from within Visual Studio</li>
+<li>Pressing f5 will compile and run the program, showing a command prompt window with an input menu</li>
+<li>Follow the menu options by typing the number corresponding to the command you want to execute and pressing enter to load, print, find, delete, or exit the program
+<ul>
+<li>For example, press "9" followed by "Enter" to close the command prompt window</li>
+</ul>
+</li>
 </ul>
 
 <h3>Help</h3>
 <p>
-Most of the issues I ran into with this program involve setting up the JUnit library and getting the first tests laid out.  This video goes over JUnit in Eclipse and general setup, which I found helpful.  The information I found most relevant starts at the 9:00 timestamp.  
+Most of the issues I ran into with this program involve creating the actual binary search tree, but I also had some issues with Visual Studio since I find it to be the least intuitive IDE I've used thus far.  This video helps go over Visual Studio basics and familiarity, which helped me a great deal.  
 <ul>
 <li>
-<a target='blank' href='https://www.youtube.com/watch?v=BOHs67tC-QE&ab_channel=Simplilearn'>JUnit Installation & Eclipse Environement Setup How To Install JUnit JUnit Tutorial Simplilearn</a>
+<a target='blank' href='https://www.youtube.com/watch?v=u2mExOej_DE&ab_channel=Hacked'>Visual Studio 2019 (Full Download and Installation) Getting Started</a>
 </li>
 </ul>
 </p>
 
 <h3>Authors</h3>
 <p>
-Christian Kesler (a.k.a. KnowOne), who can be found on <a target='blank' href='https://github.com/christian-kesler'>GitHub</a> and <a target='blank' href='https://www.linkedin.com/in/christian-kesler/'>LinkedIn</a>
+Christian Kesler (a.k.a. KnowOne), who can be found on <a target='blank' href='https://github.com/christian-kesler'>GitHub</a> and <a target='blank' href='https://www.linkedin.com/in/christian-kesler/'>LinkedIn</a>.  
 </p>
 
 <h3>Version History</h3>
 <ul>
 <li>
-v1.0.0
+<a target='blank' href='https://github.com/christian-kesler/binary-search-tree-cplusplus/releases/tag/v1.0.0'>v1.0.0</a>
 <ul>
 <li>
-Initial Release upon completion of the CS-320 course at Southern New Hampshire University
-</li>
-<li>
-See commit change or See release history
+Initial Release upon completion of the CS-260 course at Southern New Hampshire University
 </li>
 </ul>
 </li>
 <li>
-v1.1.0
+<a target='blank' href='https://github.com/christian-kesler/binary-search-tree-cplusplus/releases/tag/v1.1.0'>v1.1.0</a>
 <ul>
 <li>
 Enhanced Revision created during the CS-499 course at Southern New Hampshire University
+</li>
+</ul>
+</li>
+<li>
+<a target='blank' href='https://github.com/christian-kesler/binary-search-tree-cplusplus/releases/tag/v1.2.0'>v1.2.0</a>
+<ul>
+<li>
+ePortfolio Release containing my final enhancements for use within the CS-499 Computer Science Capstone course
 </li>
 </ul>
 </li>
@@ -101,14 +101,14 @@ Enhanced Revision created during the CS-499 course at Southern New Hampshire Uni
 
 <h3>License</h3>
 <p>
-This project is licensed under the MIT License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the LICENSE.md file for details.  
 </p>
 
 <h3>Acknowledgements</h3>
 Inspiration, code snippets, etc.
 <ul>
 <li>
-Southern New Hampshire University, Computer Science 320:  Software Test, Automation, & Quality Assurance
+Southern New Hampshire University, Computer Science 260:  Data Structures and Algorithms
 </li>
 <li>
 <a target='blank' href='https://gist.github.com/DomPizzie/7a5ff55ffa9081f2de27c315f5018afc'>README Template</a>
